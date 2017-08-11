@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// Book Schema
+// lead Schema
 const loginSchema = mongoose.Schema({
 	username:{
 		type: String,
@@ -14,18 +14,13 @@ const loginSchema = mongoose.Schema({
 
 const Login = module.exports = mongoose.model('Login', loginSchema);
 
-// Get Books
+// Get leads
 module.exports.getLogin = (callback, limit) => {
 	Login.find(callback).limit(limit);
 }
 
-// Get Book
-// module.exports.checkLogin = (kk, callback) => {
-// 	// Login.find(username);
-// 	Login.findOne({username: 'kk'});
-// }
 
-// Add Book
+// Add lead
 module.exports.checkLogin = function (login, callback) {
 	var query = {username: login.username, password: login.password};
 	Login.findOne(query, callback);
@@ -35,31 +30,26 @@ module.exports.checkLogin = function (login, callback) {
 
 
 
-// Update Book
-module.exports.updateBook = (id, book, options, callback) => {
+// Update lead
+module.exports.updatelead = (id, lead, options, callback) => {
 	var query = {_id: id};
 	var update = {
-		title: book.title,
-		genre: book.genre,
-		description: book.description,
-		author: book.author,
-		publisher: book.publisher,
-		pages: book.pages,
-		image_url: book.image_url,
-		buy_url: book.buy_url
+		title: lead.title,
+		genre: lead.genre,
+		description: lead.description,
+		author: lead.author,
+		publisher: lead.publisher,
+		pages: lead.pages,
+		image_url: lead.image_url,
+		buy_url: lead.buy_url
 	}
-	Book.findOneAndUpdate(query, update, options, callback);
+	lead.findOneAndUpdate(query, update, options, callback);
 }
 
-// Delete Book
-module.exports.removeBook = (id, callback) => {
+// Delete lead
+module.exports.removelead = (id, callback) => {
 	var query = {_id: id};
-	Book.remove(query, callback);
+	lead.remove(query, callback);
 }
 
-
-// // Add Book
-// module.exports.addLogin = (adduser, callback) => {
-// 	Login.create(adduser, callback);
-// }
 

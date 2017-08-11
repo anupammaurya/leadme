@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// Book Schema
+// task Schema
 const taskSchema = mongoose.Schema({
 	title:{
 		type: String,
@@ -32,13 +32,6 @@ module.exports.removeTask = (id, callback) => {
 }
 
 
-
-
-// Get Book
-// module.exports.getTask = (id, callback) => {
-// 	Title.findById(id, callback);
-// }
-
 // Update Task
 module.exports.getTitles = (id, task, options, callback) => {
 	var query = {_id: id};
@@ -56,7 +49,7 @@ module.exports.removeTask = (id, callback) => {
 }
 
 //edit task
-// Update Book
+
 module.exports.editTask = (id, task, options, callback) => {
 	var query = {_id: id};	
 	var update = {

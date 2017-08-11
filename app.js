@@ -11,8 +11,8 @@ Login = require('./model/login');
 Register = require('./model/register');
 Title = require('./model/dashboard');
 
-mongoose.connect('mongodb://<anupammaurya>:<Anupam1214@@@>@ds161630.mlab.com:61630/leadschool');
-// mongoose.connect('mongodb://127.0.0.1/cmss', { useMongoClient: true });
+// mongoose.connect('mongodb://<anupammaurya>:<Anupam1214@@@>@ds161630.mlab.com:61630/leadschool');
+mongoose.connect('mongodb://127.0.0.1/leadschool');
 var db = mongoose.connection;
 
 //check login

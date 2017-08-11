@@ -41,23 +41,23 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', function ($
 	}
 
 
-	$scope.addBook = function () {
-		console.log($scope.book);
-		$http.post('/api/books', $scope.book).success(function (response) {
+	$scope.addlead = function () {
+		console.log($scope.lead);
+		$http.post('/api/leads', $scope.lead).success(function (response) {
 			window.location.href = '#/login_next';
 		});
 	}
 
-	$scope.updateBook = function () {
+	$scope.updatelead = function () {
 		var id = $routeParams.id;
-		$http.put('/api/login/' + id, $scope.book).success(function (response) {
-			window.location.href = '#/books';
+		$http.put('/api/login/' + id, $scope.lead).success(function (response) {
+			window.location.href = '#/leads';
 		});
 	}
 
-	$scope.removeBook = function (id) {
-		$http.delete('/api/books/' + id).success(function (response) {
-			window.location.href = '#/books';
+	$scope.removelead = function (id) {
+		$http.delete('/api/leads/' + id).success(function (response) {
+			window.location.href = '#/leads';
 		});
 	}
 }]);
