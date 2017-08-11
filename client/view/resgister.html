@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="card card-container">
+		<form method="post">
+			<input type="text" class="form-control" ng-model="register.uname" placeholder="Name" required autofocus>
+			<br>
+			<input type="text" class="form-control" ng-model="register.username" placeholder="User Name" required autofocus>
+			<br>
+			<input type="password" id="inputPassword" ng-model="register.password" class="form-control" placeholder="Password" required>
+			<div id="remember" class="checkbox">
+		
+			</div>
+			<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" ng-click="addLogin()">Register</button>
+		</form>
+
+		<a href="#" class="forgot-password">
+                Click here for login
+            </a>
+	</div>
+	<!-- /card-container -->
+</div>
