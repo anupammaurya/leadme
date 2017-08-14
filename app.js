@@ -12,7 +12,7 @@ Register = require('./model/register');
 Title = require('./model/dashboard');
 
 // mongoose.connect('mongodb://<anupammaurya>:<Anupam1214@@@>@ds161630.mlab.com:61630/leadschool');
-mongoose.connect('mongodb://127.0.0.1/leadschool');
+mongoose.connect('mongodb://127.0.0.1/leadschool',  { useMongoClient: true });
 var db = mongoose.connection;
 
 //check login
@@ -97,5 +97,9 @@ app.put('/api/editTask/:_id', (req, res) => {
 
 
 
-app.listen(3000);
-console.log('Running on port 3000...');
+// app.listen(3000);
+// console.log('Running on port 3000...');
+
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
