@@ -7,12 +7,12 @@ app.use(express.static(__dirname + '/client'));
 app.use(bodyParser.json());
 
 
-Login = require('./model/login');
+// Login = require('./model/login');
 Register = require('./model/register');
 Title = require('./model/dashboard');
 
-mongoose.connect('mongodb://<anupammaurya>:<Anupam1214@@@>@ds161630.mlab.com:61630/leadschool');
-// mongoose.connect('mongodb://127.0.0.1/leadschool',  { useMongoClient: true });
+// mongoose.connect('mongodb://<anupammaurya>:<Anupam1214@@@>@ds161630.mlab.com:61630/leadschool', { useMongoClient: true });
+mongoose.connect('mongodb://127.0.0.1/leadschool',  { useMongoClient: true });
 var db = mongoose.connection;
 
 //check login
@@ -85,8 +85,10 @@ app.delete('/api/deletetask/:_id', (req, res) => {
 
 //Edit task
 app.put('/api/editTask/:_id', (req, res) => {
-	var id = req.params._id;
-	var task = req.body;
+  var id = req.params._id;
+  console.log(id);
+  var task = req.body;
+  console.log(task);
 	Title.editTask(id, task, {}, (err, task) => {
 		if(err){
 			throw err;
@@ -94,11 +96,6 @@ app.put('/api/editTask/:_id', (req, res) => {
 		res.json(task);
 	});
 });
-
-
-
-// app.listen(3000);
-// console.log('Running on port 3000...');
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);

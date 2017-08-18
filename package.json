@@ -9,6 +9,7 @@
   "author": "Anupam Maurya",
   "license": "ISC",
   "dependencies": {
+    "angularjs-datepicker": "^2.1.23",
     "heroku-cli": "^6.13.10",
     "nodemon": "^1.11.0"
   },

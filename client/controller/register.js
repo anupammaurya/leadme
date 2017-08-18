@@ -4,7 +4,7 @@ myApp.controller('Registercontroller', ['$scope', '$http', '$location', function
 	console.log('Registercontroller loaded...');
 
 $scope.addLogin = function () {
-		alert("add user..");
+		console.log("add user..");
 		console.log($scope.register);
 		$http.post('/api/adduser', $scope.register).success(function (response) {
 			console.log(response);

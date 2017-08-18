@@ -2,14 +2,37 @@ const mongoose = require('mongoose');
 
 // task Schema
 const taskSchema = mongoose.Schema({
-	title:{
+	full_name:{
 		type: String,
 		required: true
 	},
-	description:{
+
+	dob:{
+		type: Date,
+		required: true
+	},
+
+	school:{
+		type: String,
+		required: true
+	},
+
+	class:{
+		type: String,
+		required: true
+	},
+
+	div:{
+		type: String,
+		required: true
+	},
+
+	status:{
 		type: String,
 		required: true
 	}
+
+
 });
 
 const Title = module.exports = mongoose.model('Title', taskSchema);
@@ -32,16 +55,6 @@ module.exports.removeTask = (id, callback) => {
 }
 
 
-// Update Task
-module.exports.getTitles = (id, task, options, callback) => {
-	var query = {_id: id};
-	var update = {
-		title: task.title,
-		description: task.description
-	}
-	Title.findOneAndUpdate(query, update, options, callback);
-}
-
 // Delete Task
 module.exports.removeTask = (id, callback) => {
 	var query = {_id: id};
@@ -49,12 +62,15 @@ module.exports.removeTask = (id, callback) => {
 }
 
 //edit task
-
 module.exports.editTask = (id, task, options, callback) => {
 	var query = {_id: id};	
 	var update = {
-		title: task.title,
-		description: task.description
+		full_name: task.full_name,
+		dob: task.dob,
+		school: task.school,
+		class: task.class,
+		div: task.div,
+		status: task.status 
 	}
 	Title.findOneAndUpdate(query, update, options, callback);
 }

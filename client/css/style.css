@@ -287,8 +287,6 @@ textarea.form-control {
 }
 
 .cross {
-    position: relative;
-    float: right;
     font-size: 1.5rem;
     color: #f10e55;
     cursor: pointer;
@@ -296,15 +294,77 @@ textarea.form-control {
 
 .logout {
     position: relative;
-    top: 11px;
-    font-size:2rem;
+    top: 2rem;
+    font-size: 3rem;
+    cursor: pointer;
 }
 
-.edit {
-    margin-left: 7px;
+.logout:hover{
+    color: #f26522;
+}
+
+.navbar-brand>img {
+    display: block;
+    width: 80%;
+    position: relative;
+    bottom: 10px;
+}
+
+.navbar{
+    background: #f3e6e6 !important;
+    height: 70px;
+    border: none;
+}
+
+.sidebar{
+    box-sizing: border-box;
+    min-height: 540px;
+    border: 1px dotted #e4efeb;
+    background: rgba(217, 237, 247, 0.43);
+    overflow: auto;
+}
+
+.customeBtn{
+    width: 100%;
+    position: relative;
+    top: 1rem;
+    margin-top: 1rem;
+}
+
+#ui-datepicker-div{
+    z-index: 2 !important;
+}
+
+section{
+    padding: 3px 0px;
+}
+
+.border_h2{
+        border-bottom: 4px dotted green;
+}
+
+td, th{
+    text-align: center;
+}
+
+.edit{
     color: green;
     position: relative;
-    float: right;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.ui-datepicker-trigger{
+    position: absolute;
+    width: 10%;
+    left: 24.4rem;
+    top: 0.4rem;
+    z-index: 999;
+}
+
+	#datepicker2 .ui-datepicker-trigger {
+    position: absolute !important;
+    z-index: 999;
+    right: 10rem !important;
+    bottom: 0.7rem !important;
 }

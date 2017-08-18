@@ -6,7 +6,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', function ($
 	
 	
 	$scope.checkLogin = function () {
-		alert("login checking..");
+		console.log("login checking..");
 		console.log($scope.login);
 		$http.post('/api/logins', $scope.login).then(
        function(response){
@@ -21,18 +21,18 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', function ($
 						$location.path("/dashboard");
 					}
 			
-		   alert("okay")
+		   console.log("okay")
          // success callback
        }, 
        function(error){
-		   alert("not okay");
+		   console.log("not okay");
          // failure callback
        }
     );
 	}
 
 	$scope.getLogin = function () {
-		alert("get the login_id detail here..");
+		console.log("get the login_id detail here..");
 		console.log($scope.login);
 		var id = $routeParams.id;
 		$http.get('/api/logins/' + id).success(function (response) {
